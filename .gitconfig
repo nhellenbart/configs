@@ -1,0 +1,23 @@
+[user]
+	name = Niklas Hellenbart
+	email = nhellenbart@es-enterprise-solutions.de
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[github]
+	user = nhellenbart
+[color]
+	ui = true
+[alias]
+	changes = whatchanged -p -m
+	dc = diff --cached
+	ls = log --graph --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+	ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative --stat
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	tree-long = log --graph --decorate --abbrev-commit
+	tree-all = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	branch-base = merge-base master HEAD
+	branch-base-tag = !git tag --contains $(git merge-base master HEAD)
